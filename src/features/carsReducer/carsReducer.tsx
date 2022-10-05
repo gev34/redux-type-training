@@ -1,5 +1,4 @@
-export const initialData = {
-    carsData: [
+export const initialCars = [
       {
         id: 0,
         company: "BMW",
@@ -56,20 +55,31 @@ export const initialData = {
           "https://www.carscoops.com/wp-content/uploads/2020/12/bremach-taos-uaz-patriot-usa-russia-suv-0.jpg",
         backgroundColor: "grey",
       },
-    ],
-  };
+    ];
   
-  export const carsReducer = (state = initialData, action: any) => {
+    interface Props {
+      state:Array<DataProps>
+    }
+   export interface DataProps {
+      id: number,
+      company: string,
+      model: string,
+      image: string,
+      backgroundColor: string,
+    }
+ 
+
+  export const carsReducer = (state:any = initialCars, action: any) => {
     switch (action.type) {
       case "EDIT_CAR_DATA":
       //  console.log(state.carsData[action.payload.id]);
     //    const el = state.carsData.find(car => car.id === action.payload.id)
       //  console.log(state.carsData[action.payload.id].backgroundColor );
     
-        // return {
-        //   ...state,
-        //   carsData: [...state.carsData, state.carsData[action.payload.id].backgroundColor = action.payload.color]
-        // }
+        return {
+          ...state,
+          initialCars: [...state[action.payload.id].backgroundColor = action.payload.color]
+        }
       default:
         return state;
     }
