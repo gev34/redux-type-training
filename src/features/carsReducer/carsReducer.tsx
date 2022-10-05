@@ -69,16 +69,12 @@ export const initialCars = [
     }
  
 
-  export const carsReducer = (state:any = initialCars, action: any) => {
+  /**/  export const carsReducer = (state:any  = initialCars, action: any) => {
     switch (action.type) {
-      case "EDIT_CAR_DATA":
-      //  console.log(state.carsData[action.payload.id]);
-    //    const el = state.carsData.find(car => car.id === action.payload.id)
-      //  console.log(state.carsData[action.payload.id].backgroundColor );
-    
+      case "EDIT_CAR_DATA":   
         return {
           ...state,
-          initialCars: [...state[action.payload.id].backgroundColor = action.payload.color]
+          initialCars: [...initialCars[action.payload.id].backgroundColor = action.payload.color]
         }
       default:
         return state;

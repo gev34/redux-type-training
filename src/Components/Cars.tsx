@@ -8,7 +8,7 @@ import { DataProps } from "../features/carsReducer/carsReducer";
 const Cars = () => {
     const dispatch = useDispatch();
 
-    const state = useSelector((state) => {
+  /**/   const state = useSelector((state) => {
        return state     
     })
 
@@ -28,7 +28,7 @@ const Cars = () => {
             <h2>{car.company}</h2>
             <h3>{car.model}</h3>
             <form
-              onSubmit={(e:any) => {
+ /**/              onSubmit={(e:any) => {
                 e.preventDefault();
                 const form = e.target;
                 const newBgc = form.newcolor.value;
